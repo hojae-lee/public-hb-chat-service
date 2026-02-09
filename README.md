@@ -4,6 +4,20 @@
 
 ![결과 화면](./result.png)
 
+## 환경 변수 (.env)
+
+실행 전 꼭 환경 변수를 변경하고 실행해주세요.
+
+```bash
+VITE_H_CHAT_API_URL=http://localhost:8000
+```
+
+- .env.example 에서 .example 을 삭제하시면 됩니다.
+
+## 빌드
+
+프로덕션 빌드는 Vite `build` 옵션으로 벤더 청크를 분리(react, markdown, ui, data 등)해 초기 로드 용량을 나누고, 재방문 시 캐시 활용이 잘 되도록 구성해 두었습니다. `pnpm build` 후 `dist/`에서 산출물을 확인할 수 있습니다.
+
 ## 기술 스택 (주요 버전)
 
 | 구분         | 기술                          | 버전                         |
@@ -73,15 +87,3 @@ pnpm dev
 - API/네트워크 오류 시 한글 에러 메시지로 토스트 안내.
 - 스트리밍 응답 중 "응답 중단" 버튼으로 즉시 취소 가능.
 - 서버 헬스 체크: API 서버 상태를 확인하고, 실패 시 왼쪽 하단에 연결 상태를 표시
-
-## 환경 변수 (.env)
-
-```bash
-VITE_H_CHAT_API_URL=http://localhost:8000
-```
-
-- .env.example 에서 .example 을 삭제하시면 됩니다.
-
-## 빌드
-
-프로덕션 빌드는 Vite `build` 옵션으로 벤더 청크를 분리(react, markdown, ui, data 등)해 초기 로드 용량을 나누고, 재방문 시 캐시 활용이 잘 되도록 구성해 두었습니다. `pnpm build` 후 `dist/`에서 산출물을 확인할 수 있습니다.
